@@ -6,10 +6,6 @@ import ru.netology.repository.Repository;
 public class Manager {
     private Repository repository;
 
-    public Manager() {
-
-    }
-
     public Manager(Repository repository) {
         this.repository = repository;
     }
@@ -24,15 +20,13 @@ public class Manager {
 
     public Product[] searchBy(String keyword) {
         Product[] result = new Product[0];
-
         for (Product product: repository.findAll()) {
             if (matches(product, keyword)) {
                 Product[] tempStorage = new Product[result.length + 1];
-                tempStorage[result.length] = product;
+                tempStorage[tempStorage.length - 1] = product;
                 result = tempStorage;
             }
         }
-
         return result;
     }
 }
