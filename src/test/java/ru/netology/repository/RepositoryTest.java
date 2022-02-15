@@ -21,7 +21,7 @@ class RepositoryTest {
 
         Product[] expected = {item1};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -34,7 +34,7 @@ class RepositoryTest {
 
         Product[] expected = {item1, item2};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -49,7 +49,7 @@ class RepositoryTest {
 
         Product[] expected = {item1, item2, item3};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     /*
@@ -62,7 +62,7 @@ class RepositoryTest {
 
         Product[] expected = {};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -73,7 +73,7 @@ class RepositoryTest {
 
         Product[] expected = {item1};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     /*
@@ -87,7 +87,7 @@ class RepositoryTest {
 
         Product[] expected = {};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -99,7 +99,7 @@ class RepositoryTest {
 
         Product[] expected = {};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -115,7 +115,7 @@ class RepositoryTest {
 
         Product[] expected = {item1, item3};
         Product[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
 }

@@ -20,13 +20,18 @@ public class Manager {
 
     public Product[] searchBy(String keyword) {
         Product[] result = new Product[0];
-        for (Product product: repository.findAll()) {
+
+        for (Product product : repository.findAll()) {
             if (matches(product, keyword)) {
                 Product[] tempStorage = new Product[result.length + 1];
+                for (int i = 0; i < result.length; i++) {
+                    tempStorage[i] = result[i];
+                }
                 tempStorage[tempStorage.length - 1] = product;
                 result = tempStorage;
             }
         }
+
         return result;
     }
 }

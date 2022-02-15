@@ -68,7 +68,7 @@ class ManagerTest {
 
         Product[] expected = {};
         Product[] actual = manager.searchBy("phone");
-        assertArrayEquals(expected, expected);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -79,8 +79,8 @@ class ManagerTest {
         manager.add(item1);
 
         Product[] expected = {item1};
-        Product[] actual = manager.searchBy("phone");
-        assertArrayEquals(expected, expected);
+        Product[] actual = manager.searchBy("product");
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -92,7 +92,7 @@ class ManagerTest {
 
         Product[] expected = {};
         Product[] actual = manager.searchBy("phone");
-        assertArrayEquals(expected, expected);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -113,6 +113,6 @@ class ManagerTest {
 
         Product[] expected = {item3, item4, item5};
         Product[] actual = manager.searchBy("phone");
-        assertArrayEquals(expected, expected);
+        assertArrayEquals(expected, actual);
     }
 }
