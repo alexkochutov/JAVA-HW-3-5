@@ -19,4 +19,13 @@ public class Smartphone extends Product {
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
+
+    @Override
+    public boolean matches(String keyword) {
+        if (!super.matches(keyword)) {
+            return this.getManufacturer().contains(keyword);
+        } else {
+            return true;
+        }
+    }
 }
