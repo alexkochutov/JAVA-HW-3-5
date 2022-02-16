@@ -24,9 +24,7 @@ public class Manager {
         for (Product product : repository.findAll()) {
             if (matches(product, keyword)) {
                 Product[] tempStorage = new Product[result.length + 1];
-                for (int i = 0; i < result.length; i++) {
-                    tempStorage[i] = result[i];
-                }
+                System.arraycopy(result, 0, tempStorage, 0, result.length);
                 tempStorage[tempStorage.length - 1] = product;
                 result = tempStorage;
             }
