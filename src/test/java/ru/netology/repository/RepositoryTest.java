@@ -8,6 +8,10 @@ import ru.netology.domain.Smartphone;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RepositoryTest {
+    Repository repository = new Repository();
+    Product item1 = new Product(1, "product", 1000);
+    Product item2 = new Book(2, "book", 100, "author");
+    Product item3 = new Smartphone(3, "smartphone", 100000, "apple");
 
     /*
         Set of tests for covering repository.save method
@@ -15,8 +19,6 @@ class RepositoryTest {
 
     @Test
     void shouldSaveToEmptyRepository() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
         repository.save(item1);
 
         Product[] expected = {item1};
@@ -26,9 +28,6 @@ class RepositoryTest {
 
     @Test
     void shouldSaveToNonEmptyRepository() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
-        Product item2 = new Product(2, "product", 1100);
         repository.save(item1);
         repository.save(item2);
 
@@ -39,10 +38,6 @@ class RepositoryTest {
 
     @Test
     void shouldSaveDifferentObjects() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
-        Product item2 = new Book(2, "book", 100, "author");
-        Product item3 = new Smartphone(3, "smartphone", 100000, "apple");
         repository.save(item1);
         repository.save(item2);
         repository.save(item3);
@@ -58,8 +53,6 @@ class RepositoryTest {
 
     @Test
     void shouldReturnEmptyResult() {
-        Repository repository = new Repository();
-
         Product[] expected = {};
         Product[] actual = repository.findAll();
         assertArrayEquals(expected, actual);
@@ -67,8 +60,6 @@ class RepositoryTest {
 
     @Test
     void shouldFindInNonEmptyRepository() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
         repository.save(item1);
 
         Product[] expected = {item1};
@@ -82,7 +73,6 @@ class RepositoryTest {
 
     @Test
     void shouldNotRemoveInEmptyRepository() {
-        Repository repository = new Repository();
         repository.removeByID(1);
 
         Product[] expected = {};
@@ -92,8 +82,6 @@ class RepositoryTest {
 
     @Test
     void shouldRemoveInRepositoryWithOneItem() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
         repository.save(item1);
         repository.removeByID(1);
 
@@ -104,10 +92,6 @@ class RepositoryTest {
 
     @Test
     void shouldRemoveInRepositoryWithMultipleItems() {
-        Repository repository = new Repository();
-        Product item1 = new Product(1, "product", 1000);
-        Product item2 = new Book(2, "book", 100, "author");
-        Product item3 = new Smartphone(3, "smartphone", 100000, "apple");
         repository.save(item1);
         repository.save(item2);
         repository.save(item3);

@@ -15,11 +15,7 @@ public class Repository {
 
     public void save(Product item) {
         Product[] tempStorage = new Product[dataStorage.length + 1];
-
-        for (int i = 0; i < dataStorage.length; i++) {
-            tempStorage[i] = dataStorage[i];
-        }
-
+        System.arraycopy(dataStorage, 0, tempStorage, 0, dataStorage.length);
         tempStorage[tempStorage.length - 1] = item;
         dataStorage = tempStorage;
     }

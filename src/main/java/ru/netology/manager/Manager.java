@@ -14,15 +14,17 @@ public class Manager {
         this.repository.save(product);
     }
 
+    public boolean matches(Product product, String search) {
+        return product.getName().contains(search);
+    }
+
     public Product[] searchBy(String keyword) {
         Product[] result = new Product[0];
 
         for (Product product : repository.findAll()) {
-            if (product.matches(keyword)) {
+            if (matches(product, keyword)) {
                 Product[] tempStorage = new Product[result.length + 1];
-                for (int i = 0; i < result.length; i++) {
-                    tempStorage[i] = result[i];
-                }
+                System.arraycopy(result, 0, tempStorage, 0, result.length);
                 tempStorage[tempStorage.length - 1] = product;
                 result = tempStorage;
             }
