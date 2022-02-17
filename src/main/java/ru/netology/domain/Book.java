@@ -19,4 +19,13 @@ public class Book extends Product {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Override
+    public boolean matches(String keyword) {
+        if (!super.matches(keyword)) {
+            return this.getAuthor().contains(keyword);
+        } else {
+            return true;
+        }
+    }
 }
